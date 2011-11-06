@@ -171,6 +171,9 @@ static struct s3c_freq clk_info[] = {
 extern void cpufreq_stats_reset(void);
 
 static unsigned long sleep_freq, original_dmc0_reg;
+
+static unsigned int sleep_freq;
+
 static unsigned long original_fclk[sizeof(clk_info) /  sizeof(struct s3c_freq)];
 
 static int dividers[sizeof(clk_info) /  sizeof(struct s3c_freq)];
@@ -706,6 +709,7 @@ void liveoc_update(unsigned int oc_value)
 	    index_max = index;
 
 	clk_info[index].fclk = (original_fclk[index] * oc_value) / 100;
+	clk_info[index].fclk = (original_fclk[index] / 100) * oc_value;
 	dividers[index] = find_divider(clk_info[index].fclk / 1000);
 
 	clk_info[index].armclk = clk_info[index].fclk / (clkdiv_val[index][0] + 1);
