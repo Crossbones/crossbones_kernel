@@ -173,7 +173,6 @@ extern void cpufreq_stats_reset(void);
 static unsigned long sleep_freq, original_dmc0_reg;
 
 static unsigned int sleep_freq;
-
 static unsigned long original_fclk[sizeof(clk_info) /  sizeof(struct s3c_freq)];
 
 static int dividers[sizeof(clk_info) /  sizeof(struct s3c_freq)];
