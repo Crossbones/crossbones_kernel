@@ -419,3 +419,4 @@ static void __exit cleanup(void)
 	usb_composite_unregister(&eth_driver);
 }
 module_exit(cleanup);
+
