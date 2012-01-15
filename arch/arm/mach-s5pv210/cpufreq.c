@@ -66,7 +66,7 @@ struct dram_conf {
 static struct dram_conf s5pv210_dram_conf[2];
 
 enum perf_level {
-	L0, L1, L2, L3, L4, L5, L6, L7,
+	L0, L1, L2, L3, L4, L5, L6,
 };
 
 enum s5pv210_mem_type {
